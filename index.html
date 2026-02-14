@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ramo Final</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background: radial-gradient(circle at bottom,#0d0d2b,#000014 80%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+svg{
+    width:400px;
+    height:600px;
+}
+
+/* Tallos */
+.stem{
+    stroke:#1faa59;
+    stroke-width:8;
+    stroke-linecap:round;
+    fill:none;
+    stroke-dasharray:300;
+    stroke-dashoffset:300;
+    animation:draw 2.5s forwards ease-out;
+}
+
+@keyframes draw{
+    to{stroke-dashoffset:0;}
+}
+
+/* Flor */
+.flower{
+    opacity:0;
+    animation:bloom 1.2s forwards ease-out;
+}
+
+.flower1{animation-delay:2.5s;}
+.flower2{animation-delay:3s;}
+.flower3{animation-delay:3.5s;}
+
+@keyframes bloom{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+.petal{
+    fill:url(#petalGrad);
+}
+
+.center{
+    fill:url(#centerGrad);
+}
+
+/* Texto */
+.text{
+    fill:white;
+    font-size:24px;
+    text-anchor:middle;
+    opacity:0;
+    animation:showText 2s forwards;
+    animation-delay:4.5s;
+}
+
+@keyframes showText{
+    to{opacity:1;}
+}
+
+</style>
+</head>
+<body>
+
+<svg viewBox="0 0 400 600">
+
+<defs>
+    <radialGradient id="petalGrad">
+        <stop offset="0%" stop-color="#ff99cc"/>
+        <stop offset="100%" stop-color="#e91e63"/>
+    </radialGradient>
+
+    <radialGradient id="centerGrad">
+        <stop offset="0%" stop-color="#fff176"/>
+        <stop offset="100%" stop-color="#ff9800"/>
+    </radialGradient>
+</defs>
+
+<!-- Tallos rectos (terminan EXACTO donde empieza la flor) -->
+<line class="stem" x1="140" y1="550" x2="140" y2="320"/>
+<line class="stem" x1="200" y1="550" x2="200" y2="280"/>
+<line class="stem" x1="260" y1="550" x2="260" y2="320"/>
+
+<!-- Flor izquierda -->
+<g class="flower flower1" transform="translate(140,244)">
+    <g>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(0) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(60) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(120) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(180) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(240) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(300) translate(0,-35)"/>
+    </g>
+    <circle class="center" r="15"/>
+</g>
+
+<!-- Flor centro -->
+<g class="flower flower2" transform="translate(200,204)">
+    <g>
+        <ellipse class="petal" rx="20" ry="38" transform="rotate(0) translate(0,-38)"/>
+        <ellipse class="petal" rx="20" ry="38" transform="rotate(60) translate(0,-38)"/>
+        <ellipse class="petal" rx="20" ry="38" transform="rotate(120) translate(0,-38)"/>
+        <ellipse class="petal" rx="20" ry="38" transform="rotate(180) translate(0,-38)"/>
+        <ellipse class="petal" rx="20" ry="38" transform="rotate(240) translate(0,-38)"/>
+        <ellipse class="petal" rx="20" ry="38" transform="rotate(300) translate(0,-38)"/>
+    </g>
+    <circle class="center" r="18"/>
+</g>
+
+<!-- Flor derecha -->
+<g class="flower flower3" transform="translate(260,244)">
+    <g>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(0) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(60) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(120) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(180) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(240) translate(0,-35)"/>
+        <ellipse class="petal" rx="18" ry="35" transform="rotate(300) translate(0,-35)"/>
+    </g>
+    <circle class="center" r="15"/>
+</g>
+
+<!-- Texto -->
+<text x="200" y="100" class="text">
+🌸 Feliz Día de la Amistad Migajera 💖
+</text>
+
+</svg>
+
+</body>
+</html>
+
+
+
+
